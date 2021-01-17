@@ -1,5 +1,5 @@
 import spinner from './spinner.gif';
-
+//Loading screen
 const Loader = () => {
   return ( 
     <div className = "loader">
