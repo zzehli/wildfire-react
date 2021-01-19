@@ -1,13 +1,41 @@
 body {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Georgia, 'Times New Roman', Times, serif;
   overflow: hidden;
+}
+/* adopted from w3: side navigation buttons, with modification */
+#mySidenav a {
+  z-index: 100;
+  position: absolute; /* Position them relative to the browser window */
+  left: -80px; /* Position them outside of the screen */
+  transition: 0.3s; /* Add transition on hover */
+  padding: 15px; /* 15px padding */
+  width: 100px; /* Set a specific width */
+  text-decoration: none; /* Remove underline */
+  font-size: 20px; /* Increase font size */
+  color: white; /* White text color */
+  border-radius: 0 5px 5px 0; /* Rounded corners on the top right and bottom right side */
+}
+
+#mySidenav a:hover {
+  left: 0; /* On mouse-over, make the elements appear as they should */
+}
+
+/* The about link: 20px from the top with a green background */
+#about {
+  top: 40px;
+  background-color: firebrick;
+}
+
+
+#blog {
+  top: 100px;
+  background-color: #2196F3; /* Blue */
 }
 
 .header {
-  padding:10px;
-  background-color: firebrick;
-  color: white;
+  color: firebrick;
+  font-weight:bold;
   position: fixed;
   top: 0;
   right: 0;
@@ -15,7 +43,7 @@ body {
   z-index: 100;
 }
 
-.header h1 {
+.header div {
   font-size: 25px;
   padding: 0;
   margin: 0;
@@ -54,6 +82,7 @@ body {
   top: 80px;
   right: 50px;
   width: 400px;
+  opacity: 0.7;
   min-height: 200px;
   padding: 20px;
   background-color:gray;
