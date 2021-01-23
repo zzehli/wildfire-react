@@ -12,29 +12,21 @@ const Map = ({ eventData, center, zoom }) => {
     //location box after click
     const [locationInfo, setLocationInfo] = useState(null);
     const [infoBox, setInfoBox] = useState(true);
-    //TODO implement
-    const [fireAlert, setFireAlert] = useState(true);
-    const [snowAlert, setSnowAlert] = useState();
+    const [idx, setIdx] = useState(eventData);
 
-    function marker(idx) {return eventData.map((ev, index) => {
-        if(ev.categories[0].id === idx) {
-            return <LocationMarker key = {index} lat={ev.geometries[0].coordinates[1]} lng={ev.geometries[0].coordinates[0]} onClick={() => {
-                setLocationInfo({ id: ev.id, title: ev.title });
-                //support for toggle away info box
-                setInfoBox(!infoBox);
-            }} />
-        }
-        return null
-    })}
+    
+    const toggle = (index) => {
+        setIdx(eventData.filter((ev) => ev.categories[0].id === index));
+    }
+    
 
     return (
         <div>
             <div id="mySidenav" className="sidenav">
-                <a href="#" id="about" onClick = {() => {
-                    setFireAlert(false);
-                }}>Fire</a>
-                <a href="#" id="blog">Storm</a>
+                <a href="#" id="Fire" onClick = {() => toggle(NATURAL_EVENT_WILDFIRE)}>Fire</a>
+                <a href="#" id="Storm" onClick = {() => toggle(SEVERE_STORMS)}>Storm</a>
             </div> 
+ 
             <Header/>
             {/*reload this component*/}
             <div className="map">
@@ -43,7 +35,16 @@ const Map = ({ eventData, center, zoom }) => {
                     defaultCenter={ center }
                     defaultZoom={ zoom }
                 >
-                    {marker(NATURAL_EVENT_WILDFIRE)}
+            {idx.map((ev, index) => {
+                if(ev.categories[0].id === NATURAL_EVENT_WILDFIRE || ev.categories[0].id === SEVERE_STORMS) {
+                    return <LocationMarker key = {index} lat={ev.geometries[0].coordinates[1]} lng={ev.geometries[0].coordinates[0]} id ={ev.categories[0].id} onClick={() => {
+                        setLocationInfo({ id: ev.id, title: ev.title });
+                        //support for toggle away info box
+                        setInfoBox(!infoBox);
+                    }} />
+                }
+                return null;
+            })}
                 </GoogleMapReact>
  
                 {infoBox && 

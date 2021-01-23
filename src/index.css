@@ -22,13 +22,13 @@ body {
 }
 
 /* The about link: 20px from the top with a green background */
-#about {
+#Fire {
   top: 40px;
   background-color: firebrick;
 }
 
 
-#blog {
+#Storm {
   top: 100px;
   background-color: #2196F3; /* Blue */
 }
