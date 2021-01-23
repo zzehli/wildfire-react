@@ -9,6 +9,11 @@ This is project is uses NASA Earth Observatory Natural Event Tracker api to fetc
 * Visualise current wildfire around the world
 * Display detailed location infomation if available
 * Toggle away info-box by clicking again
+* New Feature: toggle different weather with float button
+
+![Alt Text](demo-toggle.gif)
 
 ## To-be Implemented
 * Implemented floating buttons on the side panel to select weathers, but the `google-map-react` package is not well documented, it does not seem to support changing location markers after initial launch at the moment
+
+
