@@ -11,8 +11,8 @@ This is project is uses NASA Earth Observatory Natural Event Tracker api to fetc
 * Toggle away info-box by clicking again
 
 ## Toggle Weather Events
-* Problem: should cache the API request and filter according to my criteria in order to make this function work. A demo without API call is [here](https://github.com/google-map-react/google-map-react/issues/993#issue-788674608).
-* update new Feature : toggle different weather with float button using `useState()` hook
+* Problem: should cache the API request and filter according to my criteria in order to make this function work. A demo without API call is [here](https://github.com/google-map-react/google-map-react/issues/993#issue-788674608)
+* Update new Feature : toggle different weather with float button using `useState()` hook
 
 
 
