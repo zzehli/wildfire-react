@@ -1,6 +1,6 @@
 # Live Wildfire Watch with React 
 
-This is project is uses NASA Earth Observatory Natural Event Tracker api to fetch weather data and place them onto Google Map with `google-map-react` package. This project is an extension of the tutorial by Brad Traversy.
+This is project is uses NASA Earth Observatory Natural Event Tracker api to fetch weather data and place them onto Google Map with `google-map-react` package. 
 
 ## Demo
 [Watch](https://youtu.be/OcF3CsZ7vYE) a demo of this app.
